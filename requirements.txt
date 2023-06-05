@@ -3,7 +3,6 @@ apispec==2.0.2
 arrow==1.2.3
 attrs==22.2.0
 aws-lambda-builders==1.23.1
-aws-sam-cli==1.67.0
 aws-sam-translator==1.55.0
 bcrypt==4.0.1
 Bcrypt-Flask==1.0.2
@@ -16,7 +15,6 @@ chardet==4.0.0
 chevron==0.14.0
 colorama==0.4.6
 ComboJSONAPI==1.0.5
-cookiecutter==2.1.1
 cryptography==39.0.0
 dateparser==1.1.5
 dnspython==2.3.0
