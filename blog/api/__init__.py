@@ -1,10 +1,12 @@
 from combojsonapi.spec import ApiSpecPlugin
+from flask_combo_jsonapi import Api
+
+from blog.api.tag import TagList, TagDetail
 from blog.api.user import UserList, UserDetail
 from blog.api.author import AuthorList, AuthorDetail
 from blog.api.article import ArticleList, ArticleDetail
 from combojsonapi.event import EventPlugin
 from combojsonapi.permission import PermissionPlugin
-
 
 
 def create_api_spec_plugin(app):
