@@ -22,15 +22,12 @@ from blog.admin import admin
 from blog.api import init_api
 
 
-
-
 app = Flask(__name__)
 
 app.config["SECRET_KEY"] = 'qwasaersdadafafafafaasdas'
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db.init_app(app)
-
 
 
 cfg_name = os.environ.get("CONFIG_NAME") or "DevConfig"
@@ -43,6 +40,7 @@ migrate = Migrate(app, db, compare_type=True)
 flask_bcrypt.init_app(app)
 
 api = init_api(app)
+
 
 @app.route("/")
 def index():
@@ -138,6 +136,7 @@ def handle_zero_division_error(error):
     app.logger.exception("Here's traceback for zero division error")
     return "Never divide by zero!", 400
 
+
 @app.cli.command("create-tags")
 def create_tags():
     """
@@ -152,10 +151,11 @@ def create_tags():
     "sqlalchemy",
     "news",
     ]:
-    tag = Tag(name=name)
-    db.session.add(tag)
-    db.session.commit()
-    print("created tags")
+        tag = Tag(name=name)
+        db.session.add(tag)
+        db.session.commit()
+        print("created tags")
+
 
 app.register_blueprint(users_app, url_prefix="/users")
 
